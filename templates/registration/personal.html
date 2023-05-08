@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Personal page{% endblock title %}
+
+{% block content %}
+
+    <div>
+        <h4>{{ request.user.username }}</h4>
+         <h4>{{ request.user.first_name }}</h4>
+         <h4>{{ request.user.last_name }}</h4>
+         <h4>{{ request.user.email }}</h4>
+    </div>
+        <a href="{% url 'edit' %}">edit your account here</a>
+{% endblock content %}

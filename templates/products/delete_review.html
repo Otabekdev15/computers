@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+
+<h3>Are you going to delete this review ?</h3>
+
+<b><p>Article: {{ article.title }}</p></b>
+
+<p>Comment: {{ review.comment }}</p>
+
+<a class="btn btn-danger" href="{% url 'delete' article.id review.id %}">Yes</a>
+<a class="btn btn-success" href="{% url 'detail' article.id %}">No</a>
+
+{% endblock content %}

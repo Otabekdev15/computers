@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+
+{% for article in object_list %}
+
+  <div class="container">
+<div class=" mt-4">
+<div class="card" style="width: 18rem;">
+  <img src="{{ article.photo.url }}"  class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><a href="{% url 'detail'  article.id %}">{{ article.title }}</a></h5>
+    <p class="card-text"></p>
+    <p>{{ article.body }}</p>
+  </div>
+</div>
+</div>
+  </div>
+
+{% endfor %}
+{% endblock content %}
+
